@@ -2,6 +2,14 @@ function getUserPageURL() {
   return "https://bakabt.me/user/1983187/bobman743";
 }
 
+function notifyUpdate(torrents) {
+  browser.notifications.create(null, {
+    "type": "basic",
+    "title": "BakaBT Enhancer",
+    "message": `Reloaded ${Object.keys(torrents).length} torrents`
+  });
+}
+
 function updateTorrents() {
   function onGetUserPage() {
      let parser = new DOMParser();
@@ -16,9 +24,11 @@ function updateTorrents() {
             torrents[element.dataset.torrentid] = status;
           });
      });
-     
+
      // this is async, need to check for errors (?)
-     browser.storage.local.set({"torrents": torrents});
+     browser.storage.local.set({"torrents": torrents}).then(
+      function() {notifyUpdate(torrents)});
+
   }
   var userPageRequest = new XMLHttpRequest();
   userPageRequest.addEventListener("load", onGetUserPage);
