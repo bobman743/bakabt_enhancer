@@ -1,0 +1,23 @@
+div.torrents table a.enhance-active {
+    font-weight: bolder;
+    color: green;
+    font-style: italic;
+}
+
+div.torrents table tr.torrent_alt td a.enhance-active {
+    font-weight: bolder;
+    color: green;
+    font-style: italic;
+}
+
+div.torrents table a.enhance-inactive {
+    font-weight: bolder;
+    color: red;
+    font-style: italic;
+}
+
+div.torrents table tr.torrent_alt td a.enhance-inactive {
+    font-weight: bolder;
+    color: red;
+    font-style: italic;
+}
