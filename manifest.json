@@ -4,11 +4,7 @@
   "name": "BakaBT Enhancer",
   "version": "0.0.1",
 
-  "description": "foobar",
-
-  // "icons": {
-  //   "48": "icons/border-48.png"
-  // },
+  "description": "Shows active/inactive status on the browse page",
 
   "background": {
     "scripts": ["background.js"]
@@ -21,8 +17,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://bakabt.me/browse.php*",
-        "https://bakabt.me/torrent/*"
+        "https://bakabt.me/browse.php*"
       ],
       "js": ["enhance.js"],
       "css": ["enhance.css"]
